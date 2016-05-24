@@ -44,10 +44,7 @@ int find_mc_low_dfs(int l, int r)
 			mc_temp[i] = 0;
 			temp_mc_count--;
 		}
-		else
-		{
-			find_mc_low_dfs(i + 1, r);
-		}
+		find_mc_low_dfs(i + 1, r);
 	}
 }
 
@@ -55,6 +52,7 @@ int find_mc_low(int n)
 {
 	for (int i = 0; i < n; i++)
 	{
+		cout << i << endl;
 		///包含第i个点但是不包含0~i-1这几个点
 		memset(mc_temp, 0, N_v*sizeof(char));
 		mc_temp[i] = 1;
