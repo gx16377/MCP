@@ -17,9 +17,9 @@ int main()
 	for (int i = 0; i < m; i++)
 	{
 		//cin >> trash;
-		cin >> x >> y;
-		adj_matrix[x][y] = 1;
-		adj_matrix[y][x] = 1;
+		fin >> x >> y;
+		adj_matrix[x-1][y-1] = 1;
+		adj_matrix[y-1][x-1] = 1;
 	}
 
 	find_mc_low(n);
