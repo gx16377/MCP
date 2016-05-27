@@ -23,9 +23,9 @@ int main()
 		adj_matrix[x-1][y-1] = 1;
 		adj_matrix[y-1][x-1] = 1;
 	}
-
+	cout << "start" << endl;
 	//find_mc_low(n);
-	find_mc_sa(n);
+	find_mc_ts(n);
 	cout << "最大团包含点数：\n" << mc_count << endl;
 	cout << "最大团包含点：\n";
 	for (int i = 0; i < n; i++)

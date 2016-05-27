@@ -1,10 +1,4 @@
 #include "mcp.h"
-#include <time.h>
-
-typedef struct Vertice {
-	int i;
-	struct Vertice* next;
-} vertice;
 
 int c(vertice *s, int n) {
 	int num = 0;
@@ -32,21 +26,31 @@ void compare(vertice *s, int n) {
 int latest_add;
 int latest_del;
 
-
+int add_num[N_v];
+int del_num[N_v];
+long long int add_sum;
+long long int del_sum;
 
 void find_mc_sa(int n) {
 	//int t = n;//gap between initial value of t and range of c(S) effects efficiency a lot
-	vertice *state;
-	vertice head,temp_v;
-	head.i = 0;
-	head.next = nullptr;
-	state = &head;
+	vertice *state,*free;
+	vertice temp_v;
 
+	vertice statelist[MAX_MC];
+	free = &statelist[1];
+	for (int i = 1;i < MAX_MC;i++) {
+		statelist[i].next = i == MAX_MC - 1 ? nullptr : &statelist[i + 1];
+	}
+	
+	state = &statelist[0];
+	state->i = 0;
+	state->next = nullptr;
 	srand(time(0));
 	int t = c(state, n);
 	int dt;
 	while (true) {
 		int flag = 0;
+		compare(state, n);
 		for (int j = 0;j < n;j++) {
 			int can_be_added = 1;
 			for (vertice *v = state;v != nullptr;v = v->next) {
@@ -55,7 +59,7 @@ void find_mc_sa(int n) {
 					break;
 				}
 			}
-			if (can_be_added&&j != latest_del) {
+			if (can_be_added&&j != latest_del&&add_num[j] <add_sum*2/n+100) {
 				temp_v.i = j;
 				temp_v.next = state;
 				dt = c(&temp_v, n) - t;
@@ -65,7 +69,10 @@ void find_mc_sa(int n) {
 					t = dt + t;
 					flag = 1;
 					latest_add = j;
-					vertice *v = (vertice*)malloc(sizeof(vertice));
+					add_num[j]++;
+					add_sum++;
+					vertice *v = free;
+					free = free->next;
 					v->i = j;
 					v->next = state;
 					state = v;
@@ -79,10 +86,9 @@ void find_mc_sa(int n) {
 
 		if (!flag) {
 			//remove
-			compare(state, n);
 			vertice *prev = nullptr;
 			for (vertice *v = state;v != nullptr;v = v->next) {
-				if (v->i == latest_add) {
+				if (v->i == latest_add|| del_num[v->i] >del_sum*2/n + 100) {
 					prev = v;
 					continue;
 				}
@@ -94,13 +100,16 @@ void find_mc_sa(int n) {
 					dt = c(state, n) - t;
 				}
 				float temp = (float)rand() / RAND_MAX;
-				float temp2 = exp(-(float)dt / t) / 2;//should exp(-MAX/t) becomes 0?
+				float temp2 = exp(-(float)dt / t);//should exp(-MAX/t) becomes 0?
 				if (dt <= 0 || temp < temp2) {
 					latest_del = v->i;
+					del_num[v->i]++;
+					del_sum++;
 					t = dt + t;
 					flag = 1;
 					if (prev == nullptr)state=state->next;
-					free(v);
+					v->next = free;
+					free = v;
 					break;
 				}
 				if(prev!=nullptr)prev->next = v;
