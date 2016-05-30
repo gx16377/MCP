@@ -6,24 +6,26 @@ int mc_count = 0;				//最大团计数
 
 int main()
 {
-	ifstream fin("in.txt");
+	char s[100];
+	cin >> s;
+	ifstream fin(s);
 
 	int n, m;
-	cin >> n;
-	cin >> m;
-
 	char trash;
+	fin >> trash >> trash >> trash >> trash >> trash;
+	fin >> n >> m;
+
 	int x, y;
 	for (int i = 0; i < m; i++)
 	{
 		//cin >> trash;
-		fin >> x >> y;
+		fin >>trash>> x >> y;
 		adj_matrix[x-1][y-1] = 1;
 		adj_matrix[y-1][x-1] = 1;
 	}
-
-	find_mc_low(n);
-
+	cout << "start" << endl;
+	//find_mc_low(n);
+	find_mc_ts(n);
 	cout << "最大团包含点数：\n" << mc_count << endl;
 	cout << "最大团包含点：\n";
 	for (int i = 0; i < n; i++)
