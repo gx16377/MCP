@@ -19,6 +19,8 @@ extern int mc_count;
 int find_mc_low(int);
 void find_mc_sa(int);
 void find_mc_ts(int);
+int find_mc_SA_zz(int);
+int find_mc_TS_zz(int);
 
 typedef struct Vertice {
 	int i;

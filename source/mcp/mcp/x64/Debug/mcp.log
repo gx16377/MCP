@@ -1,3 +1,27 @@
-﻿  main.cpp
-c:\users\destr\documents\github\mcp\source\mcp\mcp\main.cpp(15): warning C4101: 'trash': unreferenced local variable
+﻿  TS_zhazha.cpp
+c:\users\destr\documents\github\mcp\source\mcp\mcp\ts_zhazha.cpp(57): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\destr\documents\github\mcp\source\mcp\mcp\ts_zhazha.cpp(144): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\destr\documents\github\mcp\source\mcp\mcp\ts_zhazha.cpp(171): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  SA_zhazha.cpp
+c:\users\destr\documents\github\mcp\source\mcp\mcp\sa_zhazha.cpp(113): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\destr\documents\github\mcp\source\mcp\mcp\sa_zhazha.cpp(186): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\destr\documents\github\mcp\source\mcp\mcp\sa_zhazha.cpp(190): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\destr\documents\github\mcp\source\mcp\mcp\sa_zhazha.cpp(198): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\destr\documents\github\mcp\source\mcp\mcp\sa_zhazha.cpp(202): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+c:\users\destr\documents\github\mcp\source\mcp\mcp\sa_zhazha.cpp(206): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+c:\users\destr\documents\github\mcp\source\mcp\mcp\sa_zhazha.cpp(252): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\destr\documents\github\mcp\source\mcp\mcp\sa_zhazha.cpp(255): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\destr\documents\github\mcp\source\mcp\mcp\sa_zhazha.cpp(264): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\destr\documents\github\mcp\source\mcp\mcp\sa_zhazha.cpp(268): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+c:\users\destr\documents\github\mcp\source\mcp\mcp\sa_zhazha.cpp(272): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+  main.cpp
+  find_mc_ts.cpp
+c:\users\destr\documents\github\mcp\source\mcp\mcp\find_mc_ts.cpp(44): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  find_mc_sa.cpp
+c:\users\destr\documents\github\mcp\source\mcp\mcp\find_mc_sa.cpp(48): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  find_mc_low.cpp
+  Generating Code...
+c:\users\destr\documents\github\mcp\source\mcp\mcp\find_mc_low.cpp(49): warning C4715: 'find_mc_low_dfs': not all control paths return a value
+c:\users\destr\documents\github\mcp\source\mcp\mcp\sa_zhazha.cpp(281): warning C4715: 'find_mc_SA_zz': not all control paths return a value
+  LINK : C:\Users\DESTR\Documents\GitHub\MCP\source\mcp\x64\Debug\mcp.exe not found or not built by the last incremental link; performing full link
   mcp.vcxproj -> C:\Users\DESTR\Documents\GitHub\MCP\source\mcp\x64\Debug\mcp.exe

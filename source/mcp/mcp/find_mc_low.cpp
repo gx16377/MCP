@@ -2,8 +2,8 @@
 
 #include "mcp.h"
 
-bool mc_temp[N_v];				//本次搜索的最大团
-int temp_mc_count = 0;			//本次搜索的最大团点数
+static bool mc_temp[N_v];				//本次搜索的最大团
+static int temp_mc_count = 0;			//本次搜索的最大团点数
 
 int find_mc_low_dfs(int l, int r)
 {
