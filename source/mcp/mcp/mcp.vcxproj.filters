@@ -21,6 +21,18 @@
     <ClCompile Include="find_mc_low.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="find_mc_sa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="find_mc_ts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SA_zhazha.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TS_zhazha.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mcp.h">

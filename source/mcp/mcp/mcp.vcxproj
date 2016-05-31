@@ -147,7 +147,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="find_mc_low.cpp" />
+    <ClCompile Include="find_mc_sa.cpp" />
+    <ClCompile Include="find_mc_ts.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SA_zhazha.cpp" />
+    <ClCompile Include="TS_zhazha.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mcp.h" />
